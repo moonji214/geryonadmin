@@ -37,10 +37,10 @@
 	<!-- section2 -->
 	<div class="section2">
 	   <div class="cont">
-			<h2><img src="<?php echo base_url; ?>inc/images/main_se2_title.png" alt="�④쑴伊뽳옙�벥 占쎌넅占쎌젻占쎈립 癰귨옙占쎌넅, 占쎌궞�뵳�눛�솁占쎈뱜占쎄섐占쎈뮞揶쏉옙 占쎈맙�뙼占� 占쎈�占쎈빍占쎈뼄."></h2>                    
+			<h2><img src="<?php echo base_url; ?>inc/images/main_se2_title.png" alt="/."></h2>                    
 			<div class="list">
 				<dl>
-					<dt class="title_box"><span>占쎈꼦燁살꼶�늺 占쎈툧占쎈┷占쎈뮉 <strong>�룯�뜇�뱟疫뀐옙 占쎌쁽�뙴占�</strong></span><a href="<?php echo base_url; ?>board/?p=<?php echo $util->XOREncode('investment'); ?>" class="btn_more">占쎌쁽�뙴占� 占쎈쐭癰귣떯由� <em>+</em></a></dt>
+					<dt class="title_box"><span>주식시황</strong></span><a href="<?php echo base_url; ?>board/?p=<?php echo $util->XOREncode('investment'); ?>" class="btn_more">占쎌쁽�뙴占� 占쎈쐭癰귣떯由� <em>+</em></a></dt>
 					<dd>
 					   <ul class="se2_data_list">
 							<?php 
@@ -54,7 +54,7 @@
 					</dd>
 				</dl>
 			</div>
-			<a href="<?php echo base_url; ?>board/?p=<?php echo $util->XOREncode('investment'); ?>" class="btn2">�룯�뜇�뱟疫뀐옙 占쎌쁽�뙴占� 占쎈쐭癰귣떯由�</a>
+			<a href="<?php echo base_url; ?>board/?p=<?php echo $util->XOREncode('investment'); ?>" class="btn2">배너</a>
 			<div class="banner">
 				<?php
 				$banner_chk2 = $db->queryfetch("select * from banner where brand='".brid."' and (flag='W' or flag='D') and view='Y' and (pc_img!='' or m_img!='') and url!='' and location='餓λ쵐釉�' order by ord desc limit 1");
@@ -73,7 +73,7 @@
 	   <div class="cont">
 			<div class="list">
 				<dl>
-					<dt class="title_box"><span>占쎈맙�뙼�꼹釉�占쎈뮉 占쎈땾占쎌뵡占쎈뼄占쎌겱 <strong>占쎄퐣�뜮袁⑸뮞</strong></span><a href="<?php echo base_url; ?>item/?p=<?php echo $util->XOREncode('service'); ?>" class="btn_more">占쎌읈筌ｏ옙 占쎄퐣�뜮袁⑸뮞 占쎌뵠占쎈짗 <em>+</em></a></dt>
+					<dt class="title_box"><span>상품소개</strong></span><a href="<?php echo base_url; ?>item/?p=<?php echo $util->XOREncode('service'); ?>" class="btn_more">占쎌읈筌ｏ옙 占쎄퐣�뜮袁⑸뮞 占쎌뵠占쎈짗 <em>+</em></a></dt>
 					<dd>
 					   <ul>
 
@@ -82,16 +82,16 @@
 							$item_qry = $db->query("select * from item where brand='".brid."' and view='Y' and sell_price > 0 and pcimg1!='' order by ord desc");
 							while($item = $db->fetch($item_qry)) {
 								
-								if(mb_strpos($item['name'], "嚥≪뮇肉�") !== false) {
-									$keyword_chk = "<span>占쎌깕占쎈�占쎈떮占쎌쁽</span> <span>占쎌읈占쎌셽占쎌읅�넫�굝�걠</span> <span>占쎈떮占쎌쁽占쎈꺗占쎈즲占쎈꼤</span>";
-								} else if(mb_strpos($item['name'], "�ⓥ뫀諭�") !== false) {
-									$keyword_chk = "<span>占쎄쉰占쎄숲占쎈떮占쎌쁽</span> <span>占쎌뒞占쎌몛占쎌읅�넫�굝�걠</span> <span>占쎈툧占쎌젟占쎄쉐占쎈꼤</span>";
-								} else if(mb_strpos($item['name'], "占쎈뼄甕곤옙") !== false) {
-									$keyword_chk = "<span>占쎈뮞占쎌맰筌띲끇�꼻</span> <span>占쎌젟疫꿸퀗�꺍占쎌몓</span>";
-								} else if(mb_strpos($item['name'], "占쎌쟿占쎈굡") !== false) {
-									$keyword_chk = "<span>占쎈꺖占쎈만占쎈떮占쎌쁽</span>";
-								} else if(mb_strpos($item['name'], "0占쎌뜚") !== false) { 
-									$keyword_chk = "<span>�눧��利�</span>";
+								if(mb_strpos($item['name'], "연장") !== false) {
+									$keyword_chk = "<span>1개월 연장권</span> ";
+								} else if(mb_strpos($item['name'], "최초") !== false) {
+									$keyword_chk = "<span>최초이용권</span> <span>1개월</span> <span>이용권</span>";
+								} else if(mb_strpos($item['name'], "플러스상품") !== false) {
+									$keyword_chk = "<span>플러스상품</span> ";
+								} else if(mb_strpos($item['name'], "영구") !== false) {
+									$keyword_chk = "<span>영구이용원</span>";
+								} else if(mb_strpos($item['name'], "기타") !== false) { 
+									$keyword_chk = "<span>샘플상품</span>";
 								} else {
 									$keyword_chk ="";
 								}
@@ -115,7 +115,7 @@
 					   </ul>
 					</dd>
 				</dl>
-				<a href="<?php echo base_url; ?>item/?p=<?php echo $util->XOREncode('payment'); ?>" class="btn2 btn_gray">獄쏅뗀以� 野껉퀣�젫 占쎈릭疫뀐옙</a>
+				<a href="<?php echo base_url; ?>item/?p=<?php echo $util->XOREncode('payment'); ?>" class="btn2 btn_gray">결제하기</a>
 			</div>
 		</div>
 	</div>
@@ -126,7 +126,7 @@
 	   <div class="cont">
 			<div class="list">
 				<dl>
-					<dt class="title_box"><span>占쎈맙�뙼�꼶�뵬占쎄퐣 占쎈뻬癰귣벏六쏙옙�쐲, <strong>占쎄문占쎄문 占쎈땾占쎌뵡 占쎌뜎疫뀐옙</strong></span><a href="<?php echo base_url; ?>board/?p=<?php echo $util->XOREncode('review'); ?>" class="btn_more">占쎌뜎疫뀐옙 占쎈쐭癰귣떯由� <em>+</em></a></dt>
+					<dt class="title_box"><span>수익후기 <strong>수익</strong></span><a href="<?php echo base_url; ?>board/?p=<?php echo $util->XOREncode('review'); ?>" class="btn_more">더보기<em>+</em></a></dt>
 					<dd>
 					  <a href="" class="btn_prev"><span class="hidden">prev</span></a>
 					  <a href="" class="btn_next"><span class="hidden">next</span></a>
@@ -135,19 +135,19 @@
 						   <ul class="swiper-wrapper">
 
 								<?php 
-								$board_qry2 = $db->query("select * from ".$review_table." where options like '%甕곗쥙�뮞占쎈뱜%' order by bdate desc, wdate desc limit 12");
+								$board_qry2 = $db->query("select * from ".$review_table." where options like '%수익%' order by bdate desc, wdate desc limit 12");
 								while($board_chk2 = $db->fetch($board_qry2)) {
 									
-									$pname = (!empty($board_chk2['etc_txt'])) ? $board_chk2['etc_txt'] : "占쎈땾占쎌뵡占쎈뼎占쎄쉐";
+									$pname = (!empty($board_chk2['etc_txt'])) ? $board_chk2['etc_txt'] : "기타후기";
 									
 									if(!empty($board_chk2['etc_op'])) {
 										$etc_op_ = explode("|", $board_chk2['etc_op']);
 										$etc_op = "<span class=\"product ".$etc_op_[0]."\">".$etc_op_[1]."</span>";
 									} else {
-										$etc_op = "<span class=\"product etc\">疫꿸퀬占�</span>";
+										$etc_op = "<span class=\"product etc\">상품</span>";
 									}
 
-									$etc_op = ""; // 占쎈땾占쎌뵡占쎌뜎疫뀐옙 占쎄맒占쎈�뱄쭗占� �뜮袁⑤걗�빊占�, 占쎌뵕餓λ쵎占썹뵳�됰뻷 占쎌뒄筌ｏ옙 2018/10/22 占쎌뿫占쎄퐨占쎈릭
+									$etc_op = ""; // 
 
 									if(!empty($board_chk2['revenue']) && $board_chk2['revenue'] != 0) {
 										$revenue = "<span class=\"percent\">+".@round($board_chk2['revenue'])."%</span>";
@@ -204,11 +204,11 @@
 	   <div class="cont">
 			<div class="list">
 				<dl>
-					<dt class="title_box"><span>占쎈맙�뙼�꼹釉�占쎈뮉 <strong>占쎄퉱占쎈꺖占쎈뻼</strong></span><a href="<?php echo base_url; ?>board/?p=<?php echo $util->XOREncode('notice'); ?>" class="btn_more">占쎈쐭癰귣떯由� <em>+</em></a></dt>
+					<dt class="title_box"><span>공지사항 <strong>고객센터</strong></span><a href="<?php echo base_url; ?>board/?p=<?php echo $util->XOREncode('notice'); ?>" class="btn_more">더보기 <em>+</em></a></dt>
 					<dd>
 						<ul>
 							<?php 
-							$board_qry3 = $db->query("select num, subject, bdate from ".$notice_table." order by options='�⑤벊占�' desc, bdate desc, wdate desc limit 3");
+							$board_qry3 = $db->query("select num, subject, bdate from ".$notice_table." order by options='공지' desc, bdate desc, wdate desc limit 3");
 							while($board_chk3 = $db->fetch($board_qry3)) {
 								echo "
 								<li>
@@ -224,7 +224,7 @@
 				</dl>
 				
 				<?php
-				$banner_chk3 = $db->queryfetch("select * from banner where brand='".brid."' and (flag='W' or flag='D') and view='Y' and (pc_img!='' or m_img!='') and url!='' and location='占쎈릭占쎈뼊' order by ord desc limit 1");
+				$banner_chk3 = $db->queryfetch("select * from banner where brand='".brid."' and (flag='W' or flag='D') and view='Y' and (pc_img!='' or m_img!='') and url!='' and location='서울' order by ord desc limit 1");
 				if(!empty($banner_chk3) && ($banner_chk3['nodate'] == "Y" || ($banner_chk3['nodate'] == "N" && $banner_chk3['sdate'] <= date("Y-m-d H:i:s") && $banner_chk3['edate'] >= date("Y-m-d H:i:s")))) { 
 				$img_chk = (!empty($banner_chk3['pc_img'])) ? $banner_chk3['pc_img'] : $banner_chk3['m_img'];	
 				?>
@@ -247,8 +247,8 @@ if(!empty($popup_chk) && ($popup_chk['nodate'] == "Y" || ($popup_chk['nodate'] =
 	<div class="popup_box">
 		<p class="img"><a href="<?php echo $popup_chk['url']; ?>" target="<?php echo $popup_chk['target']; ?>" onclick="a.bbs('popup', '<?php echo $popup_chk['num']; ?>');"><img src="<?php echo base_file.$popup_chk['img']; ?>" alt="<?php echo $popup_chk['alt']; ?>"></a></p>
 		<ul>
-			<li><input type="checkbox" id="layer_chk1" checked><label for="layer_chk1"></label><a href="" class="btn_today_close">占쎈릭�뙴占� 癰귣똻占� 占쎈륫疫뀐옙</a></li>
-			<li><a href="" class="btn_today_close1">占쎈뼍疫뀐옙</a></li>
+			<li><input type="checkbox" id="layer_chk1" checked><label for="layer_chk1"></label><a href="" class="btn_today_close">굿</a></li>
+			<li><a href="" class="btn_today_close1">닫기</a></li>
 		</ul>
 	</div>
 </div>
